@@ -768,7 +768,7 @@ class Encoder extends ObjectYPT {
             if (!empty($obj->videoDownloadedLink)) {
                 $description = $encoder->getDescriptionFromLink($obj->videoDownloadedLink);
             } else {
-                $description = "";
+                $description = $title;
             }
         } else {
             $description = $_POST['description'];
