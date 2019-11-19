@@ -254,9 +254,9 @@ hd/index.m3u8
 ";
 
             mkdir($destinationFile . "res240");
-            $str .= "#EXT-X-STREAM-INF:BANDWIDTH=300000
-res240/index.m3u8
-";
+            //$str .= "#EXT-X-STREAM-INF:BANDWIDTH=300000
+//res240/index.m3u8
+//";
             foreach ($resolutions as $key => $value) {
                 if ($height >= $value) {
                     mkdir($destinationFile . "res{$value}");
