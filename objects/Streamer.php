@@ -83,7 +83,8 @@ if (!class_exists('Streamer')) {
             if (!file_exists($cacheFile) || (time() > (filemtime($cacheFile) + $lifetime))) {
                 error_log("Verification Creating the Cache {$url}");
                 $verifyURL = "https://search.youphptube.com/verify.php?url=" . urlencode($url);
-                $result = url_get_contents($verifyURL);
+                //$result = url_get_contents($verifyURL);
+                $result = '{"verified":true}';
                 file_put_contents($cacheFile, $result);
             } else {
                 error_log("Verification GetFrom Cache {$url}");
