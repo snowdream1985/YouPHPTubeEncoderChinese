@@ -3,6 +3,8 @@ require_once dirname(__FILE__) . '/../videos/configuration.php';
 require_once $global['systemRootPath'] . 'objects/Login.php';
 header('Content-Type: application/json');
 
+setlocale(LC_ALL, 'zh_CN.UTF-8');
+
 $files = array();
 if(Login::canBulkEncode()){
     if (!empty($_POST['path'])) {
@@ -22,8 +24,8 @@ if(Login::canBulkEncode()){
                 $path_parts = pathinfo($value);
                 $obj = new stdClass();
                 $obj->id = $id++;
-                $obj->path = utf8_encode($value);
-                $obj->name = utf8_encode($path_parts['basename']);
+                $obj->path = $value;
+                $obj->name = $path_parts['basename'];
                 $files[] = $obj;
             }
         }

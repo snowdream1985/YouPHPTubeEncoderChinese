@@ -9,6 +9,8 @@ header('Content-Type: application/json');
 $obj = new stdClass();
 $obj->error = true;
 
+setlocale(LC_ALL, 'zh_CN.UTF-8');
+
 if (isset($_FILES['upl']) && $_FILES['upl']['error'] == 0) {
     $extension = pathinfo($_FILES['upl']['name'], PATHINFO_EXTENSION);
 

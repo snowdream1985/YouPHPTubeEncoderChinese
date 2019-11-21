@@ -1,5 +1,7 @@
 <?php
 
+setlocale(LC_ALL, 'zh_CN.UTF-8');
+
 if (!class_exists('Format')) {
 
     class Format extends ObjectYPT {
